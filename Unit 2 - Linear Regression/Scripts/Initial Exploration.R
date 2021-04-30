@@ -8,3 +8,10 @@ str(wine)
 mean(wine$Price)
  
 # Equation y = 7.07 
+
+# Ecuacion con pendiente positiva podria predecir un precio alto
+# y = 0.5 (AGST) - 1.25
+
+# Medir la Calidad de una regresion Lineal
+# Es la suma de los Square Errors = SSE
+# Numero de DataPoints en nuestro dataset
