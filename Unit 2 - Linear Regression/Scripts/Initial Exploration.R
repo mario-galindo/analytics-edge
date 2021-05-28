@@ -1,17 +1,37 @@
 # Import Wine Dataset
 wine = read.csv("Unit 2 - Linear Regression/Data/wine.csv")
 
-# View the structure of dataset
 str(wine)
 
-# Get the Average price
-mean(wine$Price)
- 
-# Equation y = 7.07 
+summary(wine)
 
-# Ecuacion con pendiente positiva podria predecir un precio alto
-# y = 0.5 (AGST) - 1.25
+# Creating a Linear Regression Model
+model1 = lm(Price ~ AGST, data = wine)
 
-# Medir la Calidad de una regresion Lineal
-# Es la suma de los Square Errors = SSE
-# Numero de DataPoints en nuestro dataset
+# Check the model
+summary(model1)
+
+#Check Residuals
+model1$residuals
+
+# SUM of Square Errors
+SSE = sum(model1$residuals^2)
+SSE
+
+# Creating another model with another independent variable
+model2 = lm(Price ~ AGST + HarvestRain, data = wine)
+
+summary(model2)
+SSE_Model2 = sum(model2$residuals^2)
+SSE_Model2
+
+# Creating a Model3 with all independent variables
+model3 = lm(Price ~ AGST + HarvestRain + WinterRain + FrancePop , data = wine)
+summary(model3)
+
+SSE_Model3 = sum(model3$residuals^2)
+SSE_Model3
+
+
+
+
